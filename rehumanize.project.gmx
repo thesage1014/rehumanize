@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\box</sprite>
+    <sprite>sprites\spr_msgbox</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -15,10 +16,20 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\Key.gml</script>
+    <script>scripts\Msg.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\font0</font>
+  </fonts>
   <objects name="objects">
     <object>objects\collider</object>
     <object>objects\obj_player</object>
+    <objects name="npc">
+      <object>objects\npc</object>
+    </objects>
+    <objects name="messageboxes">
+      <object>objects\msg_template</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\intro</room>
