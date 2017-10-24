@@ -8,10 +8,18 @@
   <sprites name="sprites">
     <sprite>sprites\sprite0</sprite>
     <sprite>sprites\box</sprite>
+    <sprite>sprites\spr_npc</sprite>
+    <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_msgbox</sprite>
+    <sprite>sprites\spr_demon</sprite>
+    <sprite>sprites\spr_human</sprite>
+    <sprite>sprites\spr_tablet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <backgrounds name="conflictBgs">
+      <background>background\cbg1</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -26,14 +34,24 @@
     <object>objects\obj_player</object>
     <objects name="npc">
       <object>objects\npc</object>
+      <object>objects\battle1Obj</object>
     </objects>
     <objects name="messageboxes">
       <object>objects\msg_template</object>
     </objects>
+    <objects name="conflictObjs">
+      <object>objects\demonObj</object>
+      <object>objects\humanObj</object>
+      <object>objects\tabletObj</object>
+      <object>objects\wordboxObj</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\intro</room>
+    <room>rooms\rm_intro</room>
     <room>rooms\room1</room>
+    <rooms name="conflicts">
+      <room>rooms\rm_conflict</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
