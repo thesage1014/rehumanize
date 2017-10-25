@@ -15,7 +15,7 @@
 //set font
 draw_set_font(font0)
 
-global.friends = 0
+
 // initialize text boxes
 global.maxMsgs = 10
 for(i=0;i&lt;global.maxMsgs;i++) {
@@ -24,7 +24,25 @@ for(i=0;i&lt;global.maxMsgs;i++) {
 global.lastMsg = 0
 
 // battle inits
-//global.
+global.cmsg1 = ""
+global.cmsg2 = ""
+global.learned = 0
+global.sourceWordObj = -1
+enum e{dout,opps,gult,sham,jeal,fear,gred}
+
+global.ken[e.dout] = 0
+global.ken[e.opps] = 0
+global.ken[e.gult] = 0
+global.ken[e.sham] = 0
+global.ken[e.jeal] = 0
+global.ken[e.fear] = 0
+global.ken[e.gred] = 0
+// if debug
+if(debug_mode) {
+    
+} else {
+    object_set_visible(collider,false)
+}
 
 // move to first room
 room_goto(room1)</code>

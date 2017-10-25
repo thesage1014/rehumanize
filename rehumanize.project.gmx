@@ -6,14 +6,19 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprite0</sprite>
     <sprite>sprites\box</sprite>
+    <sprite>sprites\spr_wordbox</sprite>
     <sprite>sprites\spr_npc</sprite>
     <sprite>sprites\spr_player</sprite>
     <sprite>sprites\spr_msgbox</sprite>
-    <sprite>sprites\spr_demon</sprite>
-    <sprite>sprites\spr_human</sprite>
     <sprite>sprites\spr_tablet</sprite>
+    <sprite>sprites\spr_ctext1</sprite>
+    <sprites name="demons">
+      <sprite>sprites\spr_vulture</sprite>
+      <sprite>sprites\spr_demon</sprite>
+      <sprite>sprites\spr_human</sprite>
+    </sprites>
+    <sprite>sprites\spr_ctext2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -25,6 +30,9 @@
   <scripts name="scripts">
     <script>scripts\Key.gml</script>
     <script>scripts\Msg.gml</script>
+    <script>scripts\Cmsg1.gml</script>
+    <script>scripts\Cmsg2.gml</script>
+    <script>scripts\genWord.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -38,12 +46,19 @@
     </objects>
     <objects name="messageboxes">
       <object>objects\msg_template</object>
+      <object>objects\cmsg1Obj</object>
+      <object>objects\cmsg2Obj</object>
+      <object>objects\cmsg</object>
     </objects>
     <objects name="conflictObjs">
       <object>objects\demonObj</object>
       <object>objects\humanObj</object>
+      <object>objects\human1Obj</object>
       <object>objects\tabletObj</object>
       <object>objects\wordboxObj</object>
+      <object>objects\conflicMgrObj</object>
+      <object>objects\wordObj</object>
+      <object>objects\vultureObj</object>
     </objects>
   </objects>
   <rooms name="rooms">

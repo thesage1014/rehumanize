@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>9</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>humanObj</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,15 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>steps = 0
-hp = 3
-
-//conflict messages
-msgs[0] = "Hey, what are you doing?!"
-msgs[1] = "Grrr"
-msgs[2] = "You think you can just walk all over me"
-msgs[3] = "Oh okay, well I guess it's not that bad"
-msgs[4] = "Here you go, my bad"
+            <string>hp = 3
+steps = 0
 </string>
           </argument>
         </arguments>
@@ -57,6 +50,8 @@ msgs[4] = "Here you go, my bad"
           <argument>
             <kind>1</kind>
             <string>
+
+
 steps++
 </string>
           </argument>
