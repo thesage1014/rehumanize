@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>steps = 0
+
+msgs1 = 0
+msgs2 = 0
+winStep = -1
 </string>
           </argument>
         </arguments>
@@ -54,19 +58,89 @@
     }
 }
 if(steps == 100) {
-    Cmsg1("Hey, I'm not into that.")
+    Cmsg1("Hey! I didn't mean to drop their hat! Don't laugh.")
+    Ctarget1(t.gult)
 } else if(steps == 200) {
-    Cmsg2("You don't know what's good")
-} else if(steps == 300) {
-    Cmsg1("Stop thasd fasdf asdfasd fas dfas dfas dfat!")
-}  else if(steps == 400) {
-    Cmsg2("Hey, dont worry about it. Its just fun.")
-}else if(steps == 2000) {
-    instance_destroy(cmsg1Obj)
-    instance_destroy(cmsg2Obj)
+    Cmsg2("Oh, sorry I laughed like that. I don't know what I was thinking")
+    Ctarget2(t.sham)
 }
-
+if(steps &gt;= 100 &amp;&amp; global.ken[t.gult] &gt;= 20 &amp;&amp; msgs1 == 0) {
+    Cmsg1("Well... I don't feel too bad about it. It was an accident")
+    Ctarget1(t.gult)
+    with(human1Obj){sprite_index = spr_human3}
+    msgs1 = 1
+}
+if(steps &gt;= 100 &amp;&amp; global.ken[t.sham] &gt;= 20 &amp;&amp; msgs2 == 0) {
+    Cmsg2("Haha, it was kinda funny! You see?")
+    Ctarget2(t.sham)
+    with(human2Obj){sprite_index = spr_human3; image_xscale = -1}
+    msgs2 = 1
+}
+if(msgs1 &amp;&amp; msgs2 &amp;&amp; !global.battleOver) {
+    global.battleOver = 1
+    winStep = steps
+}
+if(winStep != -1 &amp;&amp; steps-winStep &gt; 100) {
+    endBattle(true)
+}
 steps++
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="53">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//phy_active = 0
+
+global.sourceWordObj = instance_position(mouse_x,mouse_y,wordboxObj)
+if(global.sourceWordObj != noone) {
+    show_debug_message(global.sourceWordObj)
+    global.sourceWordObj.mouseStartx = mouse_x
+    global.sourceWordObj.mouseStarty = mouse_y
+    global.sourceWordObj.phy_active = 0
+    global.sourceWordObj.visible = 0
+    
+    instance_create(x,y,wordObj)
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>window_set_cursor(cr_default)
 </string>
           </argument>
         </arguments>
@@ -89,7 +163,15 @@ steps++
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(x,y,"learned: " + string(global.learned))
+            <string>draw_set_colour($d4f3f0);
+draw_text(x,y-20,"Named demons")
+draw_text(x,y,"dout: " + string(global.ken[e.dout]))
+draw_text(x,y+18*1,"opps: " + string(global.ken[e.opps]))
+draw_text(x,y+18*2,"gult: " + string(global.ken[e.gult]))
+draw_text(x,y+18*3,"sham: " + string(global.ken[e.sham]))
+draw_text(x,y+18*4,"jeal: " + string(global.ken[e.jeal]))
+draw_text(x,y+18*5,"fear: " + string(global.ken[e.fear]))
+draw_text(x,y+18*6,"gred: " + string(global.ken[e.gred]))
 </string>
           </argument>
         </arguments>

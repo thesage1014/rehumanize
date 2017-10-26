@@ -10,7 +10,9 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>Msg("Looks like those people are in a conflict! I sense there are demons at play.")
+Msg("Let's see if we can use the app to identify them.")
+Msg("(try dragging words from the tablet onto the conversation)")</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -55,10 +57,12 @@
     <instance objName="collider" x="479" y="462" name="inst_BBC8A82C" locked="0" code="" scaleX="15" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="collider" x="464" y="480" name="inst_0E616FA3" locked="0" code="" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
     <instance objName="collider" x="928" y="480" name="inst_375914EC" locked="0" code="" scaleX="1" scaleY="20" colour="4294967295" rotation="0"/>
-    <instance objName="conflicMgrObj" x="64" y="576" name="inst_E4AE3C6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="conflicMgrObj" x="32" y="448" name="inst_E4AE3C6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="collider" x="448" y="1120" name="inst_C834FB65" locked="0" code="" scaleX="16.5161285400391" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="human1Obj" x="384" y="384" name="inst_FB2E6AEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="vultureObj" x="512" y="128" name="inst_20C868AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="vultureObj" x="672" y="288" name="inst_20C868AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="human2Obj" x="640" y="384" name="inst_C9F8A876" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="snakeObj" x="288" y="320" name="inst_9225C48D" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

@@ -8,7 +8,7 @@
   <parentName>demonObj</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,7 +25,47 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_alpha = global.ken[e.sham]/100 + sin(get_timer()/(100000+random(100)))*.1
+            <string>oldKen = global.ken[t.sham]
+burst = 0
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(global.ken[t.sham] &gt; oldKen) {
+    burst = 10
+}
+oldKen = global.ken[t.sham]
+if(global.battleOver) {
+    image_alpha = lerp(image_alpha, 0, .02)
+    image_xscale = lerp(image_xscale, 0, .02)
+    image_yscale = lerp(image_yscale, 0, .02)
+} else {
+    image_alpha = max(0,min(1,burst/10 + global.ken[e.sham]/100 + sin(get_timer()/(800000+random(10000)))*.2))
+    if(burst &gt; 1) {
+        image_xscale = burst
+        image_yscale = burst
+        burst = lerp(burst,.5,.1)
+    }
+}
 </string>
           </argument>
         </arguments>

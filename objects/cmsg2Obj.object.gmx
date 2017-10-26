@@ -30,8 +30,17 @@ message_draw = ""; //this is what we 'write' out. It's blank right now
 increase = 1; //the speed at which new characters are added
 characters = 0; //how many characters have already been drawn
 hold = 0; //if we hold 'Z', the text will render faster
-
 message_length = string_length(global.cmsg2); //get the number of characters in the first message
+
+bright = 0
+
+type[e.dout] = 0
+type[e.opps] = 0
+type[e.gult] = 0
+type[e.sham] = 0
+type[e.jeal] = 0
+type[e.fear] = 0
+type[e.gred] = 0
 </string>
           </argument>
         </arguments>
@@ -58,13 +67,52 @@ message_length = string_length(global.cmsg2); //get the number of characters in 
     hold = Key("act"); //hold is true or false if we hold 'Z' or not
     characters += increase * (1.5 + hold); //increase speed based on hold
     message_draw = string_copy(global.cmsg2, 0, characters); //copy string to current character
-}
+}//instance_destroy();
 else {
     if(characters == 0) {
         visible = 0; 
     } else {
         visible = 1;
     }
+}
+if(instance_number(wordObj) &gt; 0 &amp;&amp; !position_meeting(mouse_x, mouse_y, cmsg2Obj)) {
+        bright = true
+} else {
+    bright = false
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.ken[e.dout] += type[e.dout] * (global.sourceWordType[e.dout] - 5) * 2
+global.ken[e.opps] += type[e.opps] * (global.sourceWordType[e.opps] - 5) * 2
+global.ken[e.gult] += type[e.gult] * (global.sourceWordType[e.gult] - 5) * 2
+global.ken[e.sham] += type[e.sham] * (global.sourceWordType[e.sham] - 5) * 2
+global.ken[e.jeal] += type[e.jeal] * (global.sourceWordType[e.jeal] - 5) * 2
+global.ken[e.fear] += type[e.fear] * (global.sourceWordType[e.fear] - 5) * 2
+global.ken[e.gred] += type[e.gred] * (global.sourceWordType[e.gred] - 5) * 2
+
+for(i=0;i&lt;array_length_1d(global.ken);i++) {
+    if(global.ken[i] &lt; -10)
+        global.ken[i] = -10;
 }
 </string>
           </argument>
@@ -88,9 +136,9 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw_sprite(sprite_index, -1, x, y)
-col = draw_get_colour()
-draw_set_colour($dee1b6);
+            <string>col = draw_get_colour()
+draw_sprite_ext(sprite_index, -1, x, y,1,1,0,$d4f3f0*!bright,1)
+draw_set_colour($d4f3f0);
 draw_text_ext(x+16, y+20, message_draw,32,360);//draw the text at the coordinates
 draw_set_colour(col);
 </string>

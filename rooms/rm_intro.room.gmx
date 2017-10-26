@@ -11,6 +11,9 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>// user event 0  -- action key pressed
+// user event 1  -- compare what was learned
+
+global.player = -1
 
 //set font
 draw_set_font(font0)
@@ -24,12 +27,15 @@ for(i=0;i&lt;global.maxMsgs;i++) {
 global.lastMsg = 0
 
 // battle inits
-global.cmsg1 = ""
-global.cmsg2 = ""
-global.learned = 0
-global.sourceWordObj = -1
-enum e{dout,opps,gult,sham,jeal,fear,gred}
-
+global.battleStarter = -1
+global.cstage = 0 //stages increase in a battle at certain major points
+global.cmsg1 = "" //message to display in the left text box
+global.cmsg2 = "" //message to display in the right text box
+global.sourceWordObj = -1 //dragged word stuff
+global.sourceWordType[0] = -1
+global.sourceWordType[6] = -1
+enum e{dout,opps,gult,sham,jeal,fear,gred} // demon types
+enum t{dout,opps,gult,sham,jeal,fear,gred} // target value maps
 global.ken[e.dout] = 0
 global.ken[e.opps] = 0
 global.ken[e.gult] = 0
@@ -37,6 +43,7 @@ global.ken[e.sham] = 0
 global.ken[e.jeal] = 0
 global.ken[e.fear] = 0
 global.ken[e.gred] = 0
+global.battleOver = 0
 // if debug
 if(debug_mode) {
     

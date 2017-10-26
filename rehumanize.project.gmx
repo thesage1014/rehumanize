@@ -17,8 +17,12 @@
       <sprite>sprites\spr_vulture</sprite>
       <sprite>sprites\spr_demon</sprite>
       <sprite>sprites\spr_human</sprite>
+      <sprite>sprites\spr_human2</sprite>
+      <sprite>sprites\spr_human3</sprite>
+      <sprite>sprites\spr_snake</sprite>
     </sprites>
     <sprite>sprites\spr_ctext2</sprite>
+    <sprite>sprites\spr_kid1</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -33,12 +37,18 @@
     <script>scripts\Cmsg1.gml</script>
     <script>scripts\Cmsg2.gml</script>
     <script>scripts\genWord.gml</script>
+    <script>scripts\CtargetMap.gml</script>
+    <script>scripts\Ctarget1.gml</script>
+    <script>scripts\Ctarget2.gml</script>
+    <script>scripts\startBattle.gml</script>
+    <script>scripts\endBattle.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
   </fonts>
   <objects name="objects">
     <object>objects\collider</object>
+    <object>objects\kidObj</object>
     <object>objects\obj_player</object>
     <objects name="npc">
       <object>objects\npc</object>
@@ -54,11 +64,13 @@
       <object>objects\demonObj</object>
       <object>objects\humanObj</object>
       <object>objects\human1Obj</object>
+      <object>objects\human2Obj</object>
       <object>objects\tabletObj</object>
       <object>objects\wordboxObj</object>
       <object>objects\conflicMgrObj</object>
       <object>objects\wordObj</object>
       <object>objects\vultureObj</object>
+      <object>objects\snakeObj</object>
     </objects>
   </objects>
   <rooms name="rooms">

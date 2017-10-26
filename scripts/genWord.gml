@@ -2,11 +2,11 @@
 switch(irandom(8)) {
     case 0:
     with(argument0) {
-        word = "Lame"
-        type[e.dout] = 10
-        type[e.opps] = 10
-        type[e.gult] = 1
-        type[e.sham] = 5
+        word = "SHAM"
+        type[e.dout] = 0
+        type[e.opps] = 0
+        type[e.gult] = 0
+        type[e.sham] = 50
         type[e.jeal] = 0
         type[e.fear] = 0
         type[e.gred] = 0
@@ -14,14 +14,14 @@ switch(irandom(8)) {
             break;
     case 1:
     with(argument0) {
-        word = "Mine"
+        word = "GULT"
         type[e.dout] = 0
-        type[e.opps] = 10
-        type[e.gult] = 0
+        type[e.opps] = 0
+        type[e.gult] = 20
         type[e.sham] = 0
-        type[e.jeal] = 10
+        type[e.jeal] = 0
         type[e.fear] = 0
-        type[e.gred] = 10
+        type[e.gred] = 0
     }        break;
     case 2:
     with(argument0) {

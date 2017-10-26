@@ -33,6 +33,14 @@ hold = 0; //if we hold 'Z', the text will render faster
 message_length = string_length(global.cmsg1); //get the number of characters in the first message
 
 bright = 0
+
+type[e.dout] = 0
+type[e.opps] = 0
+type[e.gult] = 0
+type[e.sham] = 0
+type[e.jeal] = 0
+type[e.fear] = 0
+type[e.gred] = 0
 </string>
           </argument>
         </arguments>
@@ -94,7 +102,15 @@ if(instance_number(wordObj) &gt; 0 &amp;&amp; !position_meeting(mouse_x, mouse_y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>
+global.ken[e.dout] += type[e.dout] * (global.sourceWordType[e.dout] - 5) * 2
+global.ken[e.opps] += type[e.opps] * (global.sourceWordType[e.opps] - 5) * 2
+global.ken[e.gult] += type[e.gult] * (global.sourceWordType[e.gult] - 5) * 2
+global.ken[e.sham] += type[e.sham] * (global.sourceWordType[e.sham] - 5) * 2
+global.ken[e.jeal] += type[e.jeal] * (global.sourceWordType[e.jeal] - 5) * 2
+global.ken[e.fear] += type[e.fear] * (global.sourceWordType[e.fear] - 5) * 2
+global.ken[e.gred] += type[e.gred] * (global.sourceWordType[e.gred] - 5) * 2
+</string>
           </argument>
         </arguments>
       </action>

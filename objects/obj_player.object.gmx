@@ -28,6 +28,7 @@
             <string>interactPointx = x
 interactPointy = y
 dirAng = 0
+global.player = self
 </string>
           </argument>
         </arguments>
@@ -51,30 +52,30 @@ dirAng = 0
           <argument>
             <kind>1</kind>
             <string>///Handle Input Logic
-
+walkSpeed = 3 + Key("shift")*3
 if(Key("left")) {
     
 //    sprite_index = spr_Hero_Left;
     dirAng = 180;
-    phy_position_x -= 3;
+    phy_position_x -= walkSpeed;
 }
 
 if(Key("right")){
 //    sprite_index = spr_Hero_Right;
     dirAng = 0
-    phy_position_x += 3;
+    phy_position_x += walkSpeed;
 }
 
 if(Key("up")){
     dirAng = 270
 //    sprite_index = spr_Hero_Up;
-    phy_position_y -= 3;
+    phy_position_y -= walkSpeed;
 }
 
 if(Key("down")){
     dirAng = 90
 //    sprite_index = spr_Hero_Down;
-    phy_position_y += 3;
+    phy_position_y += walkSpeed;
 }
 
 interactPointx = x + dcos(dirAng)*20
@@ -185,19 +186,17 @@ draw_circle(interactPointx, interactPointy, 3, false)
   </events>
   <PhysicsObject>-1</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
-  <PhysicsObjectShape>1</PhysicsObjectShape>
+  <PhysicsObjectShape>0</PhysicsObjectShape>
   <PhysicsObjectDensity>0.100000001490116</PhysicsObjectDensity>
   <PhysicsObjectRestitution>0.100000001490116</PhysicsObjectRestitution>
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
-  <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
+  <PhysicsObjectLinearDamping>1</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>0</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>0,0</point>
-    <point>32,0</point>
-    <point>32,32</point>
-    <point>0,32</point>
+    <point>16,16</point>
+    <point>16,16</point>
   </PhysicsShapePoints>
 </object>
