@@ -33,6 +33,7 @@ word = global.sourceWordObj.word
 global.sourceWordType = global.sourceWordObj.type
 startx = mouseStartx
 starty = mouseStarty
+instance_create(startx,starty,scribbleObj)
 </string>
           </argument>
         </arguments>

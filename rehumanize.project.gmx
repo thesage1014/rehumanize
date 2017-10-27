@@ -16,15 +16,22 @@
     <sprite>sprites\spr_kidtext</sprite>
     <sprites name="demons">
       <sprite>sprites\spr_vulture</sprite>
-      <sprite>sprites\spr_demon</sprite>
       <sprite>sprites\spr_human</sprite>
       <sprite>sprites\spr_human2</sprite>
       <sprite>sprites\spr_human3</sprite>
       <sprite>sprites\spr_snake</sprite>
+      <sprite>sprites\spr_goose</sprite>
+      <sprite>sprites\spr_turtle</sprite>
+      <sprite>sprites\spr_monkey</sprite>
+      <sprite>sprites\spr_chipmunk</sprite>
+      <sprite>sprites\spr_peacock</sprite>
+      <sprite>sprites\spr_demons</sprite>
     </sprites>
     <sprite>sprites\spr_ctext2</sprite>
     <sprite>sprites\spr_kid1</sprite>
     <sprite>sprites\spr_rkid</sprite>
+    <sprite>sprites\spr_scribbles</sprite>
+    <sprite>sprites\spr_ddemons</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -63,6 +70,7 @@
     <object>objects\roomRightEdge</object>
     <object>objects\roomLeftEdge</object>
     <object>objects\rehumanizeObj</object>
+    <object>objects\scribbleObj</object>
     <object>objects\obj_player</object>
     <objects name="npc">
       <object>objects\npc</object>
@@ -71,8 +79,8 @@
     </objects>
     <objects name="messageboxes">
       <object>objects\msg_template</object>
-      <object>objects\cmsg1Obj</object>
       <object>objects\rkidmsgObj</object>
+      <object>objects\cmsg1Obj</object>
       <object>objects\cmsg2Obj</object>
       <object>objects\cmsg</object>
     </objects>
@@ -87,6 +95,7 @@
       <object>objects\conflicMgrObj</object>
       <object>objects\wordObj</object>
       <object>objects\vultureObj</object>
+      <object>objects\ddemonObj</object>
       <object>objects\snakeObj</object>
     </objects>
   </objects>

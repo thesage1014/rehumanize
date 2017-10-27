@@ -3,7 +3,7 @@
   <spriteName>spr_tablet</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>activate = 0
+dx = x
 </string>
           </argument>
         </arguments>
@@ -48,12 +49,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>dx = lerp(dx,mouse_x,.5)
 if(global.cstage != -1) {
     visible = 0
+} else {
+    visible = 1
 }
 if(activate) {
-    y = lerp(y,500,.1)
+    y = lerp(y,590,.1)
 } else {
     y = lerp(y,718,.1)
 }
@@ -127,9 +130,21 @@ if(activate) {
             <kind>1</kind>
             <string>x = view_xview[0] + 400
 draw_self()
-if(activated) {
+if(activate) {
     for(i=0;i&lt;7;i++) {
-        //draw_sprite(spr_demons,i,x + 40*i, y + 30)
+        ken = global.ken[i]/100+.1
+        if(ken != 0) {
+            mx = dx - x - 52 - i*60
+            xscale = min(1, abs(15/-mx))
+            draw_sprite_ext(spr_demons,i+1,x + 74 + 52*i, y + 55,xscale,1,0,make_colour_hsv(0,0,ken*200),1)
+            if(ken &gt;= 1) {
+                draw_set_colour($c2b58f)
+                draw_set_alpha(xscale-.1)
+                draw_text(x + 15 + 52*i, y + 135,global.dname[i])
+                draw_set_alpha(1)
+                draw_set_colour(c_white)
+            }
+        }
     }
 }
 </string>

@@ -102,17 +102,15 @@ if(instance_number(wordObj) &gt; 0 &amp;&amp; !position_meeting(mouse_x, mouse_y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.ken[e.dout] += type[e.dout] * (global.sourceWordType[e.dout] - 5) * 2
-global.ken[e.opps] += type[e.opps] * (global.sourceWordType[e.opps] - 5) * 2
-global.ken[e.gult] += type[e.gult] * (global.sourceWordType[e.gult] - 5) * 2
-global.ken[e.sham] += type[e.sham] * (global.sourceWordType[e.sham] - 5) * 2
-global.ken[e.jeal] += type[e.jeal] * (global.sourceWordType[e.jeal] - 5) * 2
-global.ken[e.fear] += type[e.fear] * (global.sourceWordType[e.fear] - 5) * 2
-global.ken[e.gred] += type[e.gred] * (global.sourceWordType[e.gred] - 5) * 2
-
-for(i=0;i&lt;array_length_1d(global.ken);i++) {
-    if(global.ken[i] &lt; -10)
-        global.ken[i] = -10;
+            <string>var diff = 0
+for(i=0;i&lt;7;i++) {
+    diff = type[i] * (global.sourceWordType[i] - 5) * 2
+    if(diff &lt; 0) {
+        for (j=0;j&gt;diff;j--) {
+            instance_create(x+irandom(388),y+irandom(160),scribbleObj)
+        }
+    }
+    global.ken[i] += diff
 }
 </string>
           </argument>

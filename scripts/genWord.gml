@@ -36,7 +36,7 @@ switch(irandom(8)) {
     }        break;
     case 3:
     with(argument0) {
-        word = "Oppression"
+        word = "Arrogance"
         type[e.dout] = 0//3
         type[e.opps] = 10
         type[e.gult] = 0//8

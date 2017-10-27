@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>oldKen = global.ken[t.sham]
+            <string>dtype = -1
+oldKen = 0//global.ken[t.sham]
 burst = 0
 
 </string>

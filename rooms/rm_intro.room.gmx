@@ -11,7 +11,7 @@
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>// user event 0  -- action key pressed
-// user event 1  -- compare what was learned
+// user event 1  -- conflict: compare what was learned
 
 //player instance in current room
 global.player = -1
@@ -23,10 +23,11 @@ global.tutbattle1 = 0
 global.rkid = -1
 global.rkidmsg = ":3"
 global.rkidtext[0] = "Hey I just picked up broken glass! 10 points!"
-global.rkidtext[1] = "Mwahaha. I throw my seed bomb at you, dirt! May your dirtness turn wonderful."
+global.rkidtext[1] = "Grandpa said there are demons around! And he said that kids like us can spot them!"
 global.rkidtext[2] = "Aww a kitty! Can I get points if I pet them?"
 global.rkidtext[3] = "Ooh an edible weed spotted! That's like so many points."
 global.rkidtext[4] = "Oh no, that dog is trapped in that hot car! What's the non-emergency number?"
+global.rkidtext[5] = "Mwahaha. I throw my seed bomb at you, dirt! May your dirtness turn wonderful."
 
 //world room stuff
 global.enteringFrom = 1
@@ -35,7 +36,7 @@ global.enteringFrom = 1
 draw_set_font(font0)
 
 // initialize text boxes
-global.maxMsgs = 10
+global.maxMsgs = 20
 for(i=0;i&lt;global.maxMsgs;i++) {
     global.msgList[i] = ""
 }
@@ -59,19 +60,29 @@ global.sourceWordType[0] = -1
 global.sourceWordType[6] = -1
 enum e{dout,opps,gult,sham,jeal,fear,gred} // demon types
 enum t{dout,opps,gult,sham,jeal,fear,gred} // target value maps
+show_debug_message("doubt " + string(e.dout))
+global.dname[e.dout] = "Doubt"
+global.dname[e.opps] = "Arrogance"
+global.dname[e.gult] = "Guilt"
+global.dname[e.sham] = "Shame"
+global.dname[e.jeal] = "Jealousy"
+global.dname[e.fear] = "Fear"
+global.dname[e.gred] = "Greed"
 global.ken[e.dout] = 0
 global.ken[e.opps] = 0
 global.ken[e.gult] = 0
 global.ken[e.sham] = 0
 global.ken[e.jeal] = 0
-global.ken[e.fear] = 0
-global.ken[e.gred] = 0
+global.ken[e.fear] = 50
+global.ken[e.gred] = 100
 global.battleOver = 0
 // if debug
 if(debug_mode) {
     
 } else {
     object_set_visible(collider,false)
+    object_set_visible(roomRightEdge,false)
+    object_set_visible(roomLeftEdge,false)
 }
 
 // move to first room

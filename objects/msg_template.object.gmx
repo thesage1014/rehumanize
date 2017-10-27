@@ -58,15 +58,10 @@ message_length = string_length(global.msgList[message_current]); //get the numbe
             <kind>1</kind>
             <string>if (characters &lt; message_length) { //if current character count is less than the amount in current message* 
     hold = keyboard_check(ord("Z")); //hold is true or false if we hold 'Z' or not
-    characters += increase * (1.5 + hold); //increase speed based on hold
+    characters += increase * (1.5 + hold*2.5); //increase speed based on hold
     message_draw = string_copy(global.msgList[message_current], 0, characters); //copy string to current character
 } 
-else { //if current character is more than the amount in the current message
-    if(characters == 0) {
-        //visible = 0; 
-    } else {
-        visible = 1;
-    }
+else {
     if (Key("act")) { //if we press Z...
         global.msgList[message_current] = ""
         if (message_current &lt; global.lastMsg) { //if there are more messages left to show (0 -&gt; 6, in our case)
@@ -105,8 +100,8 @@ else { //if current character is more than the amount in the current message
             <kind>1</kind>
             <string>draw_sprite(sprite_index, -1, 32, 512)
 col = draw_get_colour()
-draw_set_colour($dee1b6);
-draw_text_ext(48, 532, message_draw,32,736);//draw the text at the coordinates
+draw_set_colour($c2b58f);
+draw_text_ext(58, 562, message_draw,28,706);//draw the text at the coordinates
 draw_set_colour(col);
 </string>
           </argument>
