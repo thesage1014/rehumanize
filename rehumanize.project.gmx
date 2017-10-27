@@ -31,10 +31,13 @@
     <backgrounds name="conflictBgs">
       <background>background\cbg1</background>
     </backgrounds>
-    <background>background\bg_trinity</background>
+    <background>background\bg_market</background>
     <background>background\bg_neigh</background>
     <background>background\bg_farm</background>
     <background>background\bg_court</background>
+    <background>background\bg_park</background>
+    <background>background\bg_commctr</background>
+    <background>background\bg_trinity</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -59,6 +62,7 @@
     <object>objects\rkidObj</object>
     <object>objects\roomRightEdge</object>
     <object>objects\roomLeftEdge</object>
+    <object>objects\rehumanizeObj</object>
     <object>objects\obj_player</object>
     <objects name="npc">
       <object>objects\npc</object>
@@ -88,16 +92,17 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_intro</room>
-    <room>rooms\room1</room>
     <rooms name="conflicts">
       <room>rooms\rm_conflict</room>
-      <room>rooms\rm_skater</room>
     </rooms>
     <rooms name="world">
+      <room>rooms\rm_trinity</room>
       <room>rooms\rm_market</room>
       <room>rooms\rm_neigh</room>
       <room>rooms\rm_farm</room>
       <room>rooms\rm_court</room>
+      <room>rooms\rm_park</room>
+      <room>rooms\rm_commctr</room>
     </rooms>
   </rooms>
   <help>

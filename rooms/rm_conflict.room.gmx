@@ -10,9 +10,12 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>Msg("Looks like those people are in a conflict! I sense there are demons at play.")
-Msg("Let's see if we can use the app to identify them.")
-Msg("(try dragging words from the tablet onto the conversation)")</code>
+  <code>if(!global.tutbattle1) {
+    Msg("Looks like those people are in a conflict! I sense there are demons at play.")
+    Msg("Let's see if we can use the app to identify them.")
+    Msg("(try dragging words from the tablet onto the conversation)")
+    global.tutbattle1 = 1
+}</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -33,7 +36,7 @@ Msg("(try dragging words from the tablet onto the conversation)")</code>
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="cbg1" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="bg_market" x="-800" y="0" htiled="-1" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>

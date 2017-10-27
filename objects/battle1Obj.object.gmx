@@ -25,7 +25,33 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>battleWon = 0
+            <string>if(global.battle1won) {
+    sprite_index = spr_human3
+    global.battleOver = 0
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_user(0)
 </string>
           </argument>
         </arguments>
@@ -49,32 +75,6 @@
           <argument>
             <kind>1</kind>
             <string>startBattle(rm_conflict, self)
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="4">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(global.battleOver) {
-    sprite_index = spr_human3
-    global.battleOver = 0
-}
 </string>
           </argument>
         </arguments>

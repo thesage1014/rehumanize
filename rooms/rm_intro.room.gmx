@@ -13,18 +13,26 @@
   <code>// user event 0  -- action key pressed
 // user event 1  -- compare what was learned
 
+//player instance in current room
 global.player = -1
+
+//tutorial stuff
+global.tutbattle1 = 0
 
 //kid stuff
 global.rkid = -1
 global.rkidmsg = ":3"
+global.rkidtext[0] = "Hey I just picked up broken glass! 10 points!"
+global.rkidtext[1] = "Mwahaha. I throw my seed bomb at you, dirt! May your dirtness turn wonderful."
+global.rkidtext[2] = "Aww a kitty! Can I get points if I pet them?"
+global.rkidtext[3] = "Ooh an edible weed spotted! That's like so many points."
+global.rkidtext[4] = "Oh no, that dog is trapped in that hot car! What's the non-emergency number?"
 
 //world room stuff
 global.enteringFrom = 1
 
 //set font
 draw_set_font(font0)
-
 
 // initialize text boxes
 global.maxMsgs = 10
@@ -34,8 +42,16 @@ for(i=0;i&lt;global.maxMsgs;i++) {
 global.lastMsg = 0
 
 // battle inits
+global.battle1won = 0
+global.battle2won = 0
+global.battle3won = 0
+global.battle4won = 0
+global.battle5won = 0
+global.battle6won = 0
+global.battle7won = 0
+
 global.battleStarter = -1
-global.cstage = 0 //stages increase in a battle at certain major points
+global.cstage = -1 //stages increase in a battle at certain major points
 global.cmsg1 = "" //message to display in the left text box
 global.cmsg2 = "" //message to display in the right text box
 global.sourceWordObj = -1 //dragged word stuff
@@ -99,7 +115,9 @@ room_goto(rm_market)</code>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
-  <instances/>
+  <instances>
+    <instance objName="rehumanizeObj" x="480" y="672" name="inst_53CFC4C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+  </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

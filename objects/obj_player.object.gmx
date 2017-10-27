@@ -80,9 +80,14 @@ dirAng = 0
             <kind>1</kind>
             <string>// Depth Correction
 depth = phy_position_y * -1
-
  
-walkSpeed = 3 + Key("shift")*10
+walkSpeed = 5 + Key("shift")*15
+
+if(irandom(500) == 0) {
+    rkidMsg(global.rkidtext[irandom(array_length_1d(global.rkidtext)-1)])
+}
+
+
 if(Key("left")) {
     
 //    sprite_index = spr_Hero_Left;
@@ -110,7 +115,6 @@ if(Key("down")){
 
 interactPointx = x + dcos(dirAng)*20
 interactPointy = y + dsin(dirAng)*20
-
 
 if(Key("ract")) {
     with( instance_position(interactPointx,interactPointy,npc) )

@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hp = 3
-steps = 0
+            <string>steps = 0
 </string>
           </argument>
         </arguments>

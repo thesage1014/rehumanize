@@ -31,7 +31,7 @@
     <yoffset>0</yoffset>
   </makerSettings>
   <backgrounds>
-    <background visible="-1" foreground="0" name="bg_trinity" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="bg_market" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -52,7 +52,7 @@
   </views>
   <instances>
     <instance objName="obj_player" x="4832" y="448" name="inst_E4F77652" locked="0" code="enteringFrom = 1" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="battle1Obj" x="1632" y="352" name="inst_70FE9832" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="battle1Obj" x="1632" y="288" name="inst_70FE9832" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="rkidObj" x="5440" y="608" name="inst_5578A2A3" locked="0" code="enteringFrom = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="roomRightEdge" x="5024" y="0" name="inst_7948B9E7" locked="0" code="" scaleX="2" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="collider" x="4575" y="403" name="inst_7F978EB1" locked="0" code="" scaleX="14.3900003433228" scaleY="1" colour="4294967295" rotation="15"/>
@@ -73,8 +73,8 @@
     <instance objName="collider" x="0" y="192" name="inst_B293F5B0" locked="0" code="" scaleX="13" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="collider" x="-32" y="768" name="inst_C2558F0D" locked="0" code="" scaleX="173" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="collider" x="5344" y="320" name="inst_A475D7A3" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="roomLeftEdge" x="544" y="0" name="inst_3B439880" locked="0" code="" scaleX="2" scaleY="24" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="736" y="512" name="inst_338A574E" locked="0" code="enteringFrom = -1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="roomLeftEdge" x="416" y="32" name="inst_3B439880" locked="0" code="" scaleX="2" scaleY="24" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="896" y="512" name="inst_338A574E" locked="0" code="enteringFrom = -1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="rkidObj" x="-96" y="448" name="inst_F5CFA3B2" locked="0" code="enteringFrom = -1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="rkidObj" x="96" y="544" name="inst_7C748C31" locked="0" code="enteringFrom = -1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="rkidObj" x="256" y="448" name="inst_41583A17" locked="0" code="enteringFrom = -1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -82,6 +82,11 @@
     <instance objName="rkidObj" x="5664" y="544" name="inst_23BAA749" locked="0" code="enteringFrom = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="rkidObj" x="5792" y="384" name="inst_0E3ED34E" locked="0" code="enteringFrom = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="rkidObj" x="5664" y="416" name="inst_6506D9AD" locked="0" code="enteringFrom = 1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="1632" y="448" name="inst_06192095" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rkidObj" x="1600" y="448" name="inst_852E09F5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rkidObj" x="1664" y="448" name="inst_267CCD62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rkidObj" x="1600" y="512" name="inst_1D32DD07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rkidObj" x="1696" y="512" name="inst_97D62D93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

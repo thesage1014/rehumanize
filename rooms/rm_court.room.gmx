@@ -69,6 +69,11 @@
     <instance objName="collider" x="654" y="348" name="inst_FE8FCF13" locked="0" code="" scaleX="36.6875" scaleY="1.1599999666214" colour="4294967295" rotation="-3"/>
     <instance objName="collider" x="1823" y="400" name="inst_38FD5C44" locked="0" code="" scaleX="15.5161294937134" scaleY="1.5" colour="4294967295" rotation="0"/>
     <instance objName="collider" x="2316" y="400" name="inst_31E91573" locked="0" code="" scaleX="31.5900001525879" scaleY="1.59375" colour="4294967295" rotation="-5"/>
+    <instance objName="rkidObj" x="1312" y="448" name="inst_F1A86427" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rkidObj" x="1536" y="448" name="inst_DB493F64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rkidObj" x="1536" y="512" name="inst_CA78BD25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rkidObj" x="1312" y="640" name="inst_49C1CA4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="1440" y="576" name="inst_85BCA6A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

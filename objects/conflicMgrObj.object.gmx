@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>steps = 0
 
+global.cstage = 0
 msgs1 = 0
 msgs2 = 0
 winStep = -1
@@ -52,7 +53,7 @@ winStep = -1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(steps % room_speed == 0 &amp;&amp; instance_number(wordboxObj) &lt; 10) {
+            <string>if(!global.battleOver &amp;&amp; steps % room_speed == 0 &amp;&amp; instance_number(wordboxObj) &lt; 10) {
     with(instance_create(512+irandom(370), 970, wordboxObj)) {
         phy_angular_velocity = random(10)-5
     }
@@ -81,6 +82,8 @@ if(msgs1 &amp;&amp; msgs2 &amp;&amp; !global.battleOver) {
     winStep = steps
 }
 if(winStep != -1 &amp;&amp; steps-winStep &gt; 100) {
+    global.battle1won = 1
+    global.cstage = -1
     endBattle(true)
 }
 steps++

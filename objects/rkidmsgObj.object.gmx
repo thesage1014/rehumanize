@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>steps = 0
+            <string>color = random($ffffff)&amp;$ffffff
+steps = 0
 msg = global.rkidmsg
 kid = global.rkid
 show_debug_message(global.rkid)
