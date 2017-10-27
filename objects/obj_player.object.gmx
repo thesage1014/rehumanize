@@ -25,10 +25,37 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>interactPointx = x
+            <string>enteringFrom = 0
+interactPointx = x
 interactPointy = y
 dirAng = 0
-global.player = self
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(enteringFrom != global.enteringFrom) {
+    instance_destroy()
+} else {
+    global.player = self
+}
 </string>
           </argument>
         </arguments>
@@ -51,8 +78,11 @@ global.player = self
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Handle Input Logic
-walkSpeed = 3 + Key("shift")*3
+            <string>// Depth Correction
+depth = phy_position_y * -1
+
+ 
+walkSpeed = 3 + Key("shift")*10
 if(Key("left")) {
     
 //    sprite_index = spr_Hero_Left;
@@ -86,28 +116,6 @@ if(Key("ract")) {
     with( instance_position(interactPointx,interactPointy,npc) )
         event_user(0)
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Depth Correction
-depth = phy_position_y * -1
 </string>
           </argument>
         </arguments>
@@ -153,6 +161,29 @@ depth = phy_position_y * -1
           <argument>
             <kind>1</kind>
             <string>///Collide With
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="57">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>rkidMsg("yo.")
 </string>
           </argument>
         </arguments>

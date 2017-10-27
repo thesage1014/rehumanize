@@ -13,6 +13,7 @@
     <sprite>sprites\spr_msgbox</sprite>
     <sprite>sprites\spr_tablet</sprite>
     <sprite>sprites\spr_ctext1</sprite>
+    <sprite>sprites\spr_kidtext</sprite>
     <sprites name="demons">
       <sprite>sprites\spr_vulture</sprite>
       <sprite>sprites\spr_demon</sprite>
@@ -23,12 +24,17 @@
     </sprites>
     <sprite>sprites\spr_ctext2</sprite>
     <sprite>sprites\spr_kid1</sprite>
+    <sprite>sprites\spr_rkid</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <backgrounds name="conflictBgs">
       <background>background\cbg1</background>
     </backgrounds>
+    <background>background\bg_trinity</background>
+    <background>background\bg_neigh</background>
+    <background>background\bg_farm</background>
+    <background>background\bg_court</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -42,6 +48,7 @@
     <script>scripts\Ctarget2.gml</script>
     <script>scripts\startBattle.gml</script>
     <script>scripts\endBattle.gml</script>
+    <script>scripts\rkidMsg.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font0</font>
@@ -49,14 +56,19 @@
   <objects name="objects">
     <object>objects\collider</object>
     <object>objects\kidObj</object>
+    <object>objects\rkidObj</object>
+    <object>objects\roomRightEdge</object>
+    <object>objects\roomLeftEdge</object>
     <object>objects\obj_player</object>
     <objects name="npc">
       <object>objects\npc</object>
       <object>objects\battle1Obj</object>
+      <object>objects\battle2Obj</object>
     </objects>
     <objects name="messageboxes">
       <object>objects\msg_template</object>
       <object>objects\cmsg1Obj</object>
+      <object>objects\rkidmsgObj</object>
       <object>objects\cmsg2Obj</object>
       <object>objects\cmsg</object>
     </objects>
@@ -65,6 +77,7 @@
       <object>objects\humanObj</object>
       <object>objects\human1Obj</object>
       <object>objects\human2Obj</object>
+      <object>objects\humanKidObj</object>
       <object>objects\tabletObj</object>
       <object>objects\wordboxObj</object>
       <object>objects\conflicMgrObj</object>
@@ -78,6 +91,13 @@
     <room>rooms\room1</room>
     <rooms name="conflicts">
       <room>rooms\rm_conflict</room>
+      <room>rooms\rm_skater</room>
+    </rooms>
+    <rooms name="world">
+      <room>rooms\rm_market</room>
+      <room>rooms\rm_neigh</room>
+      <room>rooms\rm_farm</room>
+      <room>rooms\rm_court</room>
     </rooms>
   </rooms>
   <help>

@@ -13,3 +13,5 @@ if(argument0 == "ract") {
     keyboard_check_released(vk_space) | 
     keyboard_check(vk_enter)
 }
+if(argument0 == "shift")
+    return keyboard_check(vk_shift)
