@@ -28,6 +28,11 @@
             <string>if(global.battle1won) {
     sprite_index = spr_human3
     global.battleOver = 0
+    if(!global.tutbattle1) {
+        global.tutbattle1 = 1
+        Msg("~SYS~ YOU HAVE BEEN REWARDED FOR HELPING SOMEONE IN NEED")
+        Msg("~SYS~ CHECK THE APP FOR DEMON IDENTIFICATION PROGRESS")
+    }
 }
 </string>
           </argument>
@@ -74,7 +79,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>startBattle(rm_conflict, self)
+            <string>if(!global.battle1won){
+    startBattle(rm_c1, self)
+}
 </string>
           </argument>
         </arguments>

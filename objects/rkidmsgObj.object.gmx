@@ -3,7 +3,7 @@
   <spriteName>spr_kidtext</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-5</depth>
   <persistent>0</persistent>
   <parentName>cmsg</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -107,7 +107,7 @@ steps++
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
         <id>603</id>

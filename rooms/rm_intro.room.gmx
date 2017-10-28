@@ -7,30 +7,79 @@
   <hsnap>32</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
   <code>// user event 0  -- action key pressed
 // user event 1  -- conflict: compare what was learned
 
-//player instance in current room
-global.player = -1
+//general
+global.player = -1  //player instance in current room
+global.wsteps = 0
+global.gameoverFrame = -1
+global.dname[e.dout] = "Doubt"
+global.dname[e.opps] = "Arrogance"
+global.dname[e.gult] = "Guilt"
+global.dname[e.sham] = "Shame"
+global.dname[e.jeal] = "Jealousy"
+global.dname[e.fear] = "Fear"
+global.dname[e.gred] = "Greed"
 
 //tutorial stuff
 global.tutbattle1 = 0
+global.tutbattle12 = 0
 
 //kid stuff
+global.numkids = 4
 global.rkid = -1
 global.rkidmsg = ":3"
+global.rkidquest = 10
+global.rkidquestCur = -1
+global.rkidquestLastStep = 40
+global.rkidqesttext[0] = "Oh my claws, I love making music!"
+global.rkidqesttext[1] = "Music class was rad, but now I just wanna play ReHumanize"
+global.rkidqesttext[2] = "ReHumanize? Is that that augmented reality game like PokieTron Go?"
+global.rkidqesttext[3] = "It is! I've been getting so many points for helping with class."
+global.rkidqesttext[4] = "I've been too afraid to try the Demon Naming part alone."
+global.rkidqesttext[5] = "Demons? Those are just fairy tale things. I've never believed in em."
+global.rkidqesttext[6] = "No, no! They're real! And they aren't like they are in the fairy tales."
+global.rkidqesttext[7] = "My grandpa says they're all over town!"
+global.rkidqesttext[8] = "The app says if you can NAME A DEMON, they become your ally."
+global.rkidqesttext[9] = "Woah. This sounds weird. I think my parents wouldn't get it."
+global.rkidqesttext[10] = "Uhh, yeah! Birthgivers don't get people our age."
+global.rkidqesttext[11] = "So we get demons, and then we get to use them? Sounds evil."//battle1 won
+global.rkidqesttext[12] = "It's more like they stop having any power over us."
+global.rkidqesttext[13] = "If we're not controlled by a demon, we can see it for what it is."
+global.rkidqesttext[14] = "Hmm. I think I get it. It's like magic."
+global.rkidqesttext[15] = "Yup. Psycho wizard magic."
+global.rkidqesttext[16] = "Eeew, I feel gross just talking to that jerk!"//battle2
+global.rkidqesttext[17] = "Pleh. I wanna take a shower."
+global.rkidqesttext[18] = "We rehumanized him though! At least that's good"
+global.rkidqesttext[19] = "You don't really understand what girls go through on the daily..."
+global.rkidqesttext[20] = "Dang, we've had a busy day."//battle3
+global.rkidqesttext[21] = "Yeah, the universe has a way of healing itself."
+global.rkidqesttext[22] = "Wait, so there's a difference between guilt and shame?"//battle4
+global.rkidqesttext[23] = "I think it depends on weather you actually did something wrong."
+global.rkidqesttext[24] = "Shame's the one where you worry lots about what people think!"
+global.rkidqesttext[25] = "Dang, we've had a busy day."//game over
+global.rkidqesttext[26] = "Yeah, the universe has a way of healing itself."
+global.rkidqesttext[27] = "So do you think I have demons too? I'm not like those old people."
+global.rkidqesttext[28] = "Umm. I think it's just part of being human."
+global.rkidqesttext[29] = "Hey guys, girls, and otherwise, I'm heading home. It's getting late"
+global.rkidqesttext[30] = "Good night, y'all"
+global.rkidqesttext[31] = "Night"
+
+//global.rkidqesttext[20] = "
+//global.rkidqesttext[0] = "
 global.rkidtext[0] = "Hey I just picked up broken glass! 10 points!"
-global.rkidtext[1] = "Grandpa said there are demons around! And he said that kids like us can spot them!"
+global.rkidtext[1] = "Hey I just picked up broken glass! 10 points!" //TODO
 global.rkidtext[2] = "Aww a kitty! Can I get points if I pet them?"
 global.rkidtext[3] = "Ooh an edible weed spotted! That's like so many points."
 global.rkidtext[4] = "Oh no, that dog is trapped in that hot car! What's the non-emergency number?"
 global.rkidtext[5] = "Mwahaha. I throw my seed bomb at you, dirt! May your dirtness turn wonderful."
 
 //world room stuff
-global.enteringFrom = 1
+global.enteringFrom = -1
 
 //set font
 draw_set_font(font0)
@@ -43,7 +92,7 @@ for(i=0;i&lt;global.maxMsgs;i++) {
 global.lastMsg = 0
 
 // battle inits
-global.battle1won = 0
+global.battle1won =1
 global.battle2won = 0
 global.battle3won = 0
 global.battle4won = 0
@@ -59,23 +108,16 @@ global.sourceWordObj = -1 //dragged word stuff
 global.sourceWordType[0] = -1
 global.sourceWordType[6] = -1
 enum e{dout,opps,gult,sham,jeal,fear,gred} // demon types
-enum t{dout,opps,gult,sham,jeal,fear,gred} // target value maps
+enum t{dout,opps,gult,sham,jeal,fear,gred,b1,b2,b3,b4,b5,b6,b7} // target value maps
 show_debug_message("doubt " + string(e.dout))
-global.dname[e.dout] = "Doubt"
-global.dname[e.opps] = "Arrogance"
-global.dname[e.gult] = "Guilt"
-global.dname[e.sham] = "Shame"
-global.dname[e.jeal] = "Jealousy"
-global.dname[e.fear] = "Fear"
-global.dname[e.gred] = "Greed"
 global.ken[e.dout] = 0
-global.ken[e.opps] = 0
+global.ken[e.opps] = 20
 global.ken[e.gult] = 0
 global.ken[e.sham] = 0
 global.ken[e.jeal] = 0
-global.ken[e.fear] = 50
-global.ken[e.gred] = 100
-global.battleOver = 0
+global.ken[e.fear] = 20
+global.ken[e.gred] = 0
+global.battleOver = 0 
 // if debug
 if(debug_mode) {
     
@@ -84,9 +126,9 @@ if(debug_mode) {
     object_set_visible(roomRightEdge,false)
     object_set_visible(roomLeftEdge,false)
 }
-
+audio_play_sound(sound0,1,1)
 // move to first room
-room_goto(rm_market)</code>
+room_goto(rm_commctr)</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

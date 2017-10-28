@@ -51,7 +51,6 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="battle1Obj" x="1376" y="256" name="inst_70FE9832" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="rkidObj" x="64" y="384" name="inst_CF0B02DE" locked="0" code="enteringFrom = -1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="roomRightEdge" x="3552" y="0" name="inst_7948B9E7" locked="0" code="" scaleX="2" scaleY="24" colour="4294967295" rotation="0"/>
     <instance objName="roomLeftEdge" x="416" y="0" name="inst_3B439880" locked="0" code="" scaleX="2" scaleY="24" colour="4294967295" rotation="0"/>
@@ -70,11 +69,12 @@
     <instance objName="collider" x="1504" y="128" name="inst_38FD5C44" locked="0" code="" scaleX="5.57999992370605" scaleY="2.59375" colour="4294967295" rotation="0"/>
     <instance objName="collider" x="1681" y="4" name="inst_31E91573" locked="0" code="" scaleX="2.41000008583069" scaleY="14.71875" colour="4294967295" rotation="0"/>
     <instance objName="collider" x="1758" y="132" name="inst_4C305D19" locked="0" code="" scaleX="72.4800033569336" scaleY="1.28999996185303" colour="4294967295" rotation="0"/>
-    <instance objName="rkidObj" x="1248" y="256" name="inst_3A08BAA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="rkidObj" x="1472" y="288" name="inst_9877961B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="rkidObj" x="1248" y="384" name="inst_B5B782DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="rkidObj" x="1440" y="416" name="inst_C8CCD44D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="1344" y="416" name="inst_6C9EC111" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rkidObj" x="2400" y="224" name="inst_3A08BAA1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rkidObj" x="2624" y="256" name="inst_9877961B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rkidObj" x="2400" y="352" name="inst_B5B782DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="rkidObj" x="2592" y="384" name="inst_C8CCD44D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="2496" y="288" name="inst_6C9EC111" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="battle3Obj" x="2496" y="128" name="inst_523AB684" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

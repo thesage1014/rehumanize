@@ -25,10 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>enteringFrom = 0
+            <string>wspeed = 8
+enteringFrom = 0
 interactPointx = x
 interactPointy = y
 dirAng = 0
+steps = 0
+
+fadeout = 0
 </string>
           </argument>
         </arguments>
@@ -51,10 +55,19 @@ dirAng = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(enteringFrom != global.enteringFrom) {
-    instance_destroy()
-} else {
-    global.player = self
+            <string>if(0){//global.numkids &lt; instance_number(kidObj)) {
+    kdiff = instance_number(kidObj)-global.numkids
+    show_debug_message("kdiff:" + string(kdiff) + " numkids:" + string(global.numkids))
+    for(i=0;i&lt;kdiff;i++) {
+        with(instance_furthest(x,y,kidObj)) {instance_destroy()}
+    }
+}
+if(steps == 0) {
+    if(enteringFrom != global.enteringFrom) {
+        instance_destroy()
+    } else {
+        global.player = self
+    }
 }
 </string>
           </argument>
@@ -80,14 +93,47 @@ dirAng = 0
             <kind>1</kind>
             <string>// Depth Correction
 depth = phy_position_y * -1
- 
-walkSpeed = 5 + Key("shift")*15
 
-if(irandom(500) == 0) {
+walkSpeed = 5 + Key("shift")*3
+
+//kids
+if(global.rkidquestCur &lt; global.rkidquest) {
+    if(global.rkidquestLastStep + 160 &lt; global.wsteps) {
+        global.rkidquestCur++
+        global.rkidquestLastStep = global.wsteps
+        rkidMsg(global.rkidqesttext[global.rkidquestCur])
+    }
+} else if(irandom(500) == 0) {
+    global.rkidquestLastStep = global.wsteps
     rkidMsg(global.rkidtext[irandom(array_length_1d(global.rkidtext)-1)])
 }
 
+//Game over
+if(global.battle4won) {
+    if(global.gameoverFrame == -1) {
+        global.gameoverFrame = global.wsteps
+        global.rkidquest = 31
+    } else {
+        //if(global.wframe - global.gameoverFrame &gt; 300) {
+       //     global.kidquest = 28
+        //}//26..28
+        //show_debug_message("global.rkidquestCur - 28:" + string(global.rkidquestCur - 28) + " kdiff:" + string(1))
+        //global.numkids = 4 - (global.rkidquestCur - 27)
+        
+        if(fadeout == 1) {
+            room_goto(rm_end)
+        } else if(global.rkidquestCur == 31) {// &amp;&amp; fadeout == 0) {
+            if(fadeout &gt; 0) {
+                fadeout--
+            } else {
+                fadeout = 200
+            }
+        } 
+        
+    }
+}
 
+// Input
 if(Key("left")) {
     
 //    sprite_index = spr_Hero_Left;
@@ -120,6 +166,10 @@ if(Key("ract")) {
     with( instance_position(interactPointx,interactPointy,npc) )
         event_user(0)
 }
+
+///////
+
+global.wsteps++
 </string>
           </argument>
         </arguments>
@@ -170,29 +220,6 @@ if(Key("ract")) {
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="57">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>instance_create(mouse_x,mouse_y, scribbleObj)
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="50">
       <action>
         <libid>1</libid>
@@ -210,9 +237,36 @@ if(Key("ract")) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///TODO
-phy_position_x = lerp(x,mouse_x,.2)
-
+            <string>phy_position_x += min(wspeed,max(-wspeed,(mouse_x-x)*.2 ))
+phy_position_y += min(wspeed,max(-wspeed,(mouse_y-y)*.2 ))
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(fadeout &gt; 0) {
+    draw_set_alpha(1 - (fadeout/200) );
+    draw_set_colour(c_black);
+    draw_rectangle(0,0,display_get_gui_width(),display_get_gui_height(),false);
+    draw_set_alpha(1);
+}
 </string>
           </argument>
         </arguments>

@@ -28,6 +28,7 @@
             <string>dtype = -1
 oldKen = 0//global.ken[t.sham]
 burst = 0
+facing = 1
 
 </string>
           </argument>
@@ -60,9 +61,10 @@ if(global.battleOver) {
     image_xscale = lerp(image_xscale, 0, .02)
     image_yscale = lerp(image_yscale, 0, .02)
 } else {
+    image_xscale = facing
     image_alpha = max(0,min(1,burst/10 + global.ken[e.sham]/100 + sin(get_timer()/(800000+random(10000)))*.2))
     if(burst &gt; 1) {
-        image_xscale = burst
+        image_xscale = facing*burst
         image_yscale = burst
         burst = lerp(burst,.5,.1)
     }

@@ -87,6 +87,7 @@
     <instance objName="rkidObj" x="1664" y="448" name="inst_267CCD62" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="rkidObj" x="1600" y="512" name="inst_1D32DD07" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="rkidObj" x="1696" y="512" name="inst_97D62D93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="collider" x="1536" y="128" name="inst_8DD24116" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

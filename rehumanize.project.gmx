@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\sound0</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\box</sprite>
     <sprite>sprites\spr_wordbox</sprite>
@@ -76,6 +78,8 @@
       <object>objects\npc</object>
       <object>objects\battle1Obj</object>
       <object>objects\battle2Obj</object>
+      <object>objects\battle3Obj</object>
+      <object>objects\battle4Obj</object>
     </objects>
     <objects name="messageboxes">
       <object>objects\msg_template</object>
@@ -92,17 +96,30 @@
       <object>objects\humanKidObj</object>
       <object>objects\tabletObj</object>
       <object>objects\wordboxObj</object>
-      <object>objects\conflicMgrObj</object>
+      <object>objects\conflicMgrObjx</object>
+      <object>objects\cMgr1</object>
+      <object>objects\cMgr2</object>
+      <object>objects\cMgr3</object>
+      <object>objects\cMgr4</object>
       <object>objects\wordObj</object>
       <object>objects\vultureObj</object>
+      <object>objects\chipmunkObj</object>
+      <object>objects\peacockObj</object>
       <object>objects\ddemonObj</object>
       <object>objects\snakeObj</object>
+      <object>objects\turtleObj</object>
+      <object>objects\gooseObj</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_intro</room>
+    <room>rooms\rm_end</room>
     <rooms name="conflicts">
-      <room>rooms\rm_conflict</room>
+      <room>rooms\rm_conflictx</room>
+      <room>rooms\rm_c1</room>
+      <room>rooms\rm_c2</room>
+      <room>rooms\rm_c3</room>
+      <room>rooms\rm_c4</room>
     </rooms>
     <rooms name="world">
       <room>rooms\rm_trinity</room>

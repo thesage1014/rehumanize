@@ -28,6 +28,7 @@
             <string>dtype = -1
 oldKen = 0//global.ken[t.sham]
 burst = 0
+image_speed = 0
 flipped = 0
 </string>
           </argument>
